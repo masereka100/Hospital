@@ -19,6 +19,7 @@ from django.conf.urls import url
 from Doc.views import admin_doc_pdf
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^', admin.site.urls),
 
     url(r'^admin/Doc/(?P<doc_id>\d+)/pdf/$',
         admin_doc_pdf, name='admin_doc_pdf'),

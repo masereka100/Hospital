@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+</head>
+<br>
+<h>Report</h>
+Report no. {{ doc.id }} </br>
+<span class="ui-priority-secondary">
+    {{ doc.created | date:"M d, Y" }}
+</span>
+<p>
+    {{ doc. FirstName }} {{ doc.LastName }} <br>
+    {{ doc. IdNumber }} <br>
+</p>
+<table>
+    <thead>
+    <tr>
+    <th>FIRSTNAME</th>
+        <th>LASTNAME</th>
+        <th>IDNUMBER</th>
+        <th>DISEASE</th>
+        <th>PRESCRIPTION</th>
+        <th>PUBLISH</th>
+        <th>UPDATED</th>
+        <th>STATUS</th>
+    </thead>
+    <tbody>
+    {% for item in doc.items.all %} }
+        <tr class="row{% cycle "1" "2" %}">
+        <td class="num">${{ item.FirstName }}</td>
+        <td class="num">${{ item.LastName }}</td>
+        <td class="num">${{ item.IdNumber }}</td>
+        <td class="num">${{ item.Disease }}</td>
+        <td class="num">${{ item.Prescription }}</td>
+        <td class="num">${{ item.publish }}</td>
+        <td class="num">${{ item. updated }}</td>
+        <td class="num">${{ item. status }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
